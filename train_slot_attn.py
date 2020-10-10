@@ -11,7 +11,7 @@ import logging
 from torch.utils import data
 import torch.nn.functional as F
 
-import modules
+import modules_slot_attn
 
 
 parser = argparse.ArgumentParser()
@@ -44,6 +44,9 @@ parser.add_argument('--copy-action', action='store_true', default=False,
 
 parser.add_argument('--decoder', action='store_true', default=False,
                     help='Train model using decoder and pixel-based loss.')
+
+parser.add_argument('--use_slot_attn', action='store_true', default=False,
+                    help='Use slot attention as encoder')
 
 parser.add_argument('--no-cuda', action='store_true', default=False,
                     help='Disable CUDA training.')
@@ -114,7 +117,8 @@ model = modules.ContrastiveSWM(
     hinge=args.hinge,
     ignore_action=args.ignore_action,
     copy_action=args.copy_action,
-    encoder=args.encoder).to(device)
+    encoder=args.encoder,
+    use_slot_attn=args.use_slot_attn).to(device)
 
 model.apply(utils.weights_init)
 
