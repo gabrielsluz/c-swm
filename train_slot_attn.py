@@ -11,7 +11,7 @@ import logging
 from torch.utils import data
 import torch.nn.functional as F
 
-import modules_slot_attn
+import modules_slot_attn as modules
 
 
 parser = argparse.ArgumentParser()
