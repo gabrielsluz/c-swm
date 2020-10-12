@@ -5,7 +5,7 @@ import numpy as np
 import torch
 from torch import nn
 
-from slot_attention import SlotAttention
+from slot_attention.slot_attention import SlotAttention
 
 
 class ContrastiveSWM(nn.Module):
@@ -61,12 +61,10 @@ class ContrastiveSWM(nn.Module):
                 num_objects=num_objects)
 
         if use_slot_attn:
-            self.obj_encoder = SlotAttention(
+            self.obj_encoder = EncoderSlotAttention(
                 num_slots = num_objects,
                 dim = embedding_dim,
-                iters = 3   # iterations of attention, defaults to 3
-            )           
-        
+                iters = 3)           
         else:
             self.obj_encoder = EncoderMLP(
                 input_dim=np.prod(width_height),
@@ -512,3 +510,10 @@ class DecoderCNNLarge(nn.Module):
         h = self.act4(self.ln1(self.deconv2(h)))
         h = self.act5(self.ln1(self.deconv3(h)))
         return self.deconv4(h)
+
+
+class EncoderSlotAttention(SlotAttention):
+    """SlotAttention Encoder, maps obj-specific feature maps to latent state."""
+    def forward(self, ins):
+        ins = torch.flatten(ins, start_dim=2)
+        return super(EncoderSlotAttention, self).forward(ins)

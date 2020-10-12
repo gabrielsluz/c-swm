@@ -1,0 +1,1 @@
+This Slot Attention has been copied and modified from: https://github.com/lucidrains/slot-attention

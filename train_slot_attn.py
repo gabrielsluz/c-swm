@@ -155,7 +155,6 @@ if args.decoder:
 print('Starting model training...')
 step = 0
 best_loss = 1e9
-print(args.use_slot_attn)
 
 for epoch in range(1, args.epochs + 1):
     model.train()
@@ -169,8 +168,6 @@ for epoch in range(1, args.epochs + 1):
             optimizer_dec.zero_grad()
             obs, action, next_obs = data_batch
             objs = model.obj_extractor(obs)
-            if args.use_slot_attn:
-                print(objs.size())
             state = model.obj_encoder(objs)
 
             rec = torch.sigmoid(decoder(state))
