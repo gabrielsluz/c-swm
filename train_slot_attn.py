@@ -155,6 +155,7 @@ if args.decoder:
 print('Starting model training...')
 step = 0
 best_loss = 1e9
+print(use_slot_attn)
 
 for epoch in range(1, args.epochs + 1):
     model.train()
