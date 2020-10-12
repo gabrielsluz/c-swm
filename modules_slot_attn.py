@@ -64,6 +64,7 @@ class ContrastiveSWM(nn.Module):
             self.obj_encoder = EncoderSlotAttention(
                 num_slots = num_objects,
                 dim = embedding_dim,
+                input_dim = 25,
                 iters = 3)           
         else:
             self.obj_encoder = EncoderMLP(
