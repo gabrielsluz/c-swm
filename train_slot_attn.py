@@ -168,6 +168,8 @@ for epoch in range(1, args.epochs + 1):
             optimizer_dec.zero_grad()
             obs, action, next_obs = data_batch
             objs = model.obj_extractor(obs)
+            if use_slot_attn:
+                print(objs.size())
             state = model.obj_encoder(objs)
 
             rec = torch.sigmoid(decoder(state))
