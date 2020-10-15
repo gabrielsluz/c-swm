@@ -57,7 +57,7 @@ for video_index in range(num_videos):
     for frame_index in range(num_frames - 1):
         sample['obs'].append(mmnist_dataset[frame_index, video_index])
         sample['next_obs'].append(mmnist_dataset[frame_index+1, video_index])
-        sample['action'].append(np.zeros((1,1)))
+        sample['action'].append(np.zeros((1,1), dtype=np.int64))
     if video_index < num_videos_train:
         dataset_train.append(sample)
     else:
