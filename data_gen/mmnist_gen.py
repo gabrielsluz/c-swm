@@ -3,10 +3,8 @@ Transforms the mnist_test_seq.npy from http://www.cs.toronto.edu/~nitish/unsuper
 into the format expected by C-SWM.
 Divides into training and validation sets.
 Format:
-observation, action, next_observation
-*In train.py the dataset ends up been shuffled, so the only coherent pairs of observations are as above.
-*In utils PathDataset can be used to use a sequence of k frames
-*This may have to changed to adapt for other algorithms
+observations, actions, next_observations
+Each on is a list
 '''
 # Get env directory
 import sys
@@ -49,22 +47,28 @@ dataset_train = []
 dataset_eval = []
 
 for video_index in range(num_videos_train):
+    sample = {
+        'obs': [],
+        'next_obs': [],
+        'action': []
+    }
     for frame_index in range(num_frames - 1):
-        sample = {
-            'obs': mmnist_dataset[frame_index, video_index, :,:],
-            'next_obs': mmnist_dataset[frame_index+1, video_index, :,:],
-            'action': np.zeros((1,1))
-        }
-        dataset_train.append(sample)
+        sample['obs'].append(mmnist_dataset[frame_index, video_index, :,:])
+        sample['next_obs'].append(mmnist_dataset[frame_index+1, video_index, :,:])
+        sample['action'].append(np.zeros((1,1)))
+    dataset_train.append(sample)
         
 for video_index in range(num_videos_train, num_videos):
+    sample = {
+        'obs': [],
+        'next_obs': [],
+        'action': []
+    }
     for frame_index in range(num_frames - 1):
-        sample = {
-            'obs': mmnist_dataset[frame_index, video_index, :,:],
-            'next_obs': mmnist_dataset[frame_index+1, video_index, :,:],
-            'action': np.zeros((1,1))
-        }
-        dataset_eval.append(sample)
+        sample['obs'].append(mmnist_dataset[frame_index, video_index, :,:])
+        sample['next_obs'].append(mmnist_dataset[frame_index+1, video_index, :,:])
+        sample['action'].append(np.zeros((1,1)))
+    dataset_eval.append(sample)
     
 save_list_dict_h5py(dataset_train, args.train_fname)
 save_list_dict_h5py(dataset_eval, args.eval_fname)
