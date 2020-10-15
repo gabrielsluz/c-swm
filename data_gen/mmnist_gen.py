@@ -29,7 +29,7 @@ parser.add_argument('--eval_fname', type=str,
                     help='File name / path.')
 parser.add_argument('--num-frames', type=int, default=20,
                     help='Number of frames to use.')
-parser.add_argument('--train_share', type=float, default=0.8,
+parser.add_argument('--train_share', type=float, default=0.6,
                     help='Percentage of the dataset as training')
 
 args = parser.parse_args()
