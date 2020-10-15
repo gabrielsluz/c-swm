@@ -46,30 +46,23 @@ num_videos_train = int(args.train_share * num_videos)
 dataset_train = []
 dataset_eval = []
 
-for video_index in range(num_videos_train):
+mmnist_dataset = mmnist_dataset.reshape((20, 10000, 1, 64, 64)) #Include channel dimension
+
+for video_index in range(num_videos):
     sample = {
         'obs': [],
         'next_obs': [],
         'action': []
     }
     for frame_index in range(num_frames - 1):
-        sample['obs'].append(mmnist_dataset[frame_index, video_index, :,:])
-        sample['next_obs'].append(mmnist_dataset[frame_index+1, video_index, :,:])
+        sample['obs'].append(mmnist_dataset[frame_index, video_index])
+        sample['next_obs'].append(mmnist_dataset[frame_index+1, video_index])
         sample['action'].append(np.zeros((1,1)))
-    dataset_train.append(sample)
+    if video_index < num_videos_train:
+        dataset_train.append(sample)
+    else:
+        dataset_eval.append(sample)
         
-for video_index in range(num_videos_train, num_videos):
-    sample = {
-        'obs': [],
-        'next_obs': [],
-        'action': []
-    }
-    for frame_index in range(num_frames - 1):
-        sample['obs'].append(mmnist_dataset[frame_index, video_index, :,:])
-        sample['next_obs'].append(mmnist_dataset[frame_index+1, video_index, :,:])
-        sample['action'].append(np.zeros((1,1)))
-    dataset_eval.append(sample)
-    
 save_list_dict_h5py(dataset_train, args.train_fname)
 save_list_dict_h5py(dataset_eval, args.eval_fname)
 
