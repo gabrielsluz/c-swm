@@ -20,6 +20,7 @@ Train model
 '''
 def train_c_swm(args):
     args.cuda = not args.no_cuda and torch.cuda.is_available()
+    print("Inside train_c_swm")
 
     now = datetime.datetime.now()
     timestamp = now.isoformat()
@@ -51,12 +52,12 @@ def train_c_swm(args):
     pickle.dump({'args': args}, open(meta_file, "wb"))
 
     device = torch.device('cuda' if args.cuda else 'cpu')
-
+    print("About to get dataset")
     dataset = utils.StateTransitionsDataset(
         hdf5_file=args.dataset)
     train_loader = data.DataLoader(
         dataset, batch_size=args.batch_size, shuffle=True, num_workers=args.num_workers)
-
+    print("Dataset loaded")
     # Get data sample
     obs = train_loader.__iter__().next()[0]
     input_shape = obs[0].size()
@@ -374,6 +375,7 @@ args = parser.parse_args()
 results_file = open(args.results_file, "a")
 for i in range(args.num_reps):
     print("Repetition " + str(i))
+
     model = train_c_swm(args)
     results_file.write(str(args.__dict__ ))
     results_file.write("\n----\n")
