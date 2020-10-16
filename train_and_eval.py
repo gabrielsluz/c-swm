@@ -47,7 +47,7 @@ def train_c_swm(args):
     logging.basicConfig(level=logging.INFO, format='%(message)s')
     logger = logging.getLogger()
     logger.addHandler(logging.FileHandler(log_file, 'a'))
-    print = logger.info
+    #print = logger.info
 
     pickle.dump({'args': args}, open(meta_file, "wb"))
 
