@@ -105,7 +105,7 @@ def train_c_swm(args):
 
 
     # Train model.
-    # print('Starting model training...')
+    print('Starting model training...')
     step = 0
     best_loss = 1e9
 
@@ -143,13 +143,13 @@ def train_c_swm(args):
             if args.decoder:
                 optimizer_dec.step()
 
-            # if batch_idx % args.log_interval == 0:
-            #     print(
-            #         'Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
-            #             epoch, batch_idx * len(data_batch[0]),
-            #             len(train_loader.dataset),
-            #             100. * batch_idx / len(train_loader),
-            #             loss.item() / len(data_batch[0])))
+            if batch_idx % args.log_interval == 0:
+                print(
+                    'Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
+                        epoch, batch_idx * len(data_batch[0]),
+                        len(train_loader.dataset),
+                        100. * batch_idx / len(train_loader),
+                        loss.item() / len(data_batch[0])))
 
             step += 1
 
@@ -266,16 +266,16 @@ def eval_c_swm(args, model):
         indices = np.stack(indices, axis=0)
         indices = torch.from_numpy(indices).long()
 
-        # print('Processed {} batches of size {}'.format(
-        #     batch_idx + 1, args.batch_size))
+        print('Processed {} batches of size {}'.format(
+            batch_idx + 1, args.batch_size))
 
         labels = torch.zeros(
             indices.size(0), device=indices.device,
             dtype=torch.int64).unsqueeze(-1)
 
         num_samples += full_size
-        # print('Size of current topk evaluation batch: {}'.format(
-        #     full_size))
+        print('Size of current topk evaluation batch: {}'.format(
+            full_size))
 
         for k in topk:
             match = indices[:, :k] == labels
@@ -291,10 +291,10 @@ def eval_c_swm(args, model):
         pred_states = []
         next_states = []
 
-    # for k in topk:
-    #     print('Hits @ {}: {}'.format(k, hits_at[k] / float(num_samples)))
+    for k in topk:
+        print('Hits @ {}: {}'.format(k, hits_at[k] / float(num_samples)))
 
-    # print('MRR: {}'.format(rr_sum / float(num_samples)))
+    print('MRR: {}'.format(rr_sum / float(num_samples)))
     results_dict = {}
     results_dict['H1'] = hits_at[1] / float(num_samples)
     results_dict['MRR'] = rr_sum / float(num_samples)
