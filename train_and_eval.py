@@ -175,7 +175,7 @@ def eval_c_swm(args, model):
     # args = pickle.load(open(meta_file, 'rb'))['args']
 
     args.cuda = not args.no_cuda and torch.cuda.is_available()
-    args.batch_size = 100
+    batch_size = 100
     args.dataset = args.dataset_eval
     args.seed = 0
 
@@ -189,7 +189,7 @@ def eval_c_swm(args, model):
     dataset = utils.PathDataset(
         hdf5_file=args.dataset, path_length=args.num_steps)
     eval_loader = data.DataLoader(
-        dataset, batch_size=args.batch_size, shuffle=False, num_workers=args.num_workers)
+        dataset, batch_size=batch_size, shuffle=False, num_workers=args.num_workers)
 
     # Get data sample
     obs = eval_loader.__iter__().next()[0]
@@ -226,7 +226,7 @@ def eval_c_swm(args, model):
                 device) for t in tensor] for tensor in data_batch]
             observations, actions = data_batch
 
-            if observations[0].size(0) != args.batch_size:
+            if observations[0].size(0) != batch_size:
                 continue
 
             obs = observations[0]
@@ -268,7 +268,7 @@ def eval_c_swm(args, model):
         indices = torch.from_numpy(indices).long()
 
         print('Processed {} batches of size {}'.format(
-            batch_idx + 1, args.batch_size))
+            batch_idx + 1, batch_size))
 
         labels = torch.zeros(
             indices.size(0), device=indices.device,
@@ -377,11 +377,11 @@ for i in range(args.num_reps):
     print("Repetition " + str(i))
 
     model = train_c_swm(args)
+    print(args.__dict__)
+    results_dict = eval_c_swm(args, model)
+
     results_file.write(str(args.__dict__ ))
     results_file.write("\n----\n")
-    print(args.__dict__)
-
-    results_dict = eval_c_swm(args, model)
     results_file.write(str(results_dict))
     results_file.write("\n----\n")
     print(results_dict)
