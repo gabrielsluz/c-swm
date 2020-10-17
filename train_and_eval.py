@@ -176,7 +176,6 @@ def eval_c_swm(args, model):
 
     args.cuda = not args.no_cuda and torch.cuda.is_available()
     batch_size = 100
-    args.dataset = args.dataset_eval
     args.seed = 0
 
     np.random.seed(args.seed)
@@ -187,7 +186,7 @@ def eval_c_swm(args, model):
     device = torch.device('cuda' if args.cuda else 'cpu')
 
     dataset = utils.PathDataset(
-        hdf5_file=args.dataset, path_length=args.num_steps)
+        hdf5_file=args.dataset_eval, path_length=args.num_steps)
     eval_loader = data.DataLoader(
         dataset, batch_size=batch_size, shuffle=False, num_workers=args.num_workers)
 
