@@ -114,3 +114,35 @@
 ----
 {'H1': 0.98825, 'MRR': tensor(0.9925, dtype=torch.float64)}
 ----
+{'batch_size': 1024, 'epochs': 50, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 20, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 0, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'num_steps': 5, 'dataset_eval': '/datasets/c_swm_data/mmnist_eval.h5', 'num_reps': 4, 'num_workers': 4, 'results_file': 'results_c_swm.txt', 'cuda': True}
+----
+{'H1': 0.82425, 'MRR': tensor(0.8807, dtype=torch.float64)}
+----
+{'batch_size': 1024, 'epochs': 50, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 20, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 0, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'num_steps': 5, 'dataset_eval': '/datasets/c_swm_data/mmnist_eval.h5', 'num_reps': 4, 'num_workers': 4, 'results_file': 'results_c_swm.txt', 'cuda': True}
+----
+{'H1': 0.8405, 'MRR': tensor(0.8928, dtype=torch.float64)}
+----
+{'batch_size': 1024, 'epochs': 50, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 20, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 0, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'num_steps': 5, 'dataset_eval': '/datasets/c_swm_data/mmnist_eval.h5', 'num_reps': 4, 'num_workers': 4, 'results_file': 'results_c_swm.txt', 'cuda': True}
+----
+{'H1': 0.85025, 'MRR': tensor(0.8990, dtype=torch.float64)}
+----
+{'batch_size': 1024, 'epochs': 50, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 20, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 0, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'num_steps': 5, 'dataset_eval': '/datasets/c_swm_data/mmnist_eval.h5', 'num_reps': 4, 'num_workers': 4, 'results_file': 'results_c_swm.txt', 'cuda': True}
+----
+{'H1': 0.82375, 'MRR': tensor(0.8817, dtype=torch.float64)}
+----
+{'batch_size': 1024, 'epochs': 50, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 20, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 0, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'num_steps': 10, 'dataset_eval': '/datasets/c_swm_data/mmnist_eval.h5', 'num_reps': 4, 'num_workers': 4, 'results_file': 'results_c_swm.txt', 'cuda': True}
+----
+{'H1': 0.5355, 'MRR': tensor(0.6442, dtype=torch.float64)}
+----
+{'batch_size': 1024, 'epochs': 50, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 20, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 0, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'num_steps': 10, 'dataset_eval': '/datasets/c_swm_data/mmnist_eval.h5', 'num_reps': 4, 'num_workers': 4, 'results_file': 'results_c_swm.txt', 'cuda': True}
+----
+{'H1': 0.5765, 'MRR': tensor(0.6828, dtype=torch.float64)}
+----
+{'batch_size': 1024, 'epochs': 50, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 20, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 0, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'num_steps': 10, 'dataset_eval': '/datasets/c_swm_data/mmnist_eval.h5', 'num_reps': 4, 'num_workers': 4, 'results_file': 'results_c_swm.txt', 'cuda': True}
+----
+{'H1': 0.49225, 'MRR': tensor(0.6061, dtype=torch.float64)}
+----
+{'batch_size': 1024, 'epochs': 50, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 20, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 0, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'num_steps': 10, 'dataset_eval': '/datasets/c_swm_data/mmnist_eval.h5', 'num_reps': 4, 'num_workers': 4, 'results_file': 'results_c_swm.txt', 'cuda': True}
+----
+{'H1': 0.50125, 'MRR': tensor(0.6118, dtype=torch.float64)}
+----
