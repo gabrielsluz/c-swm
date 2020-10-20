@@ -54,16 +54,9 @@ Main
 parser = argparse.ArgumentParser()
 parser.add_argument('--padded_mnist_path', type=str, default='data/padded_mnist.npz',
                     help='Path to padded_minist.npz')
-
-#Ranking
 parser.add_argument('--save-folder', type=str,
                     default='checkpoints',
                     help='Path to checkpoints.')
-parser.add_argument('--num-steps', type=int, default=1,
-                    help='Number of prediction steps to evaluate.')
-parser.add_argument('--dataset', type=str,
-                    default='data/mmnist_eval.h5',
-                    help='Dataset string.')
 parser.add_argument('--no-cuda', action='store_true', default=False,
                     help='Disable CUDA training.')
             
