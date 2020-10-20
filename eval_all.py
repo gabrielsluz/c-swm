@@ -96,16 +96,16 @@ results_file.write("Linear eval acc = " + str(eval_score))
 results_file.write("\n----\n")
 print("Linear eval acc = " + str(eval_score))
 
-#Fine tuning
+#Fine tuning on 10%
 mnist_ds = MNISTDataset(padded_train_set_array[:6000], train_targets_array[:6000])
 mnist_data_loader = DataLoader(mnist_ds, batch_size=256, shuffle=True)
 mnist_test_ds = MNISTDataset(padded_test_set_array, test_targets_array)
 mnist_test_data_loader = DataLoader(mnist_test_ds, batch_size=5, shuffle=False)
 
 model, train_args = load_model_from_file(args.save_folder, input_shape, device) #Reload
-model = fine_tune_downstream(model, device, mnist_data_loader, 10, epochs=60, learning_rate=5e-4)
+model = fine_tune_downstream(model, device, mnist_data_loader, 10, epochs=30, learning_rate=5e-4)
 fine_tune_acc = evaluate_downstream(model, device, mnist_test_data_loader)
-results_file.write("Fine tune eval acc = " + str(fine_tune_acc))
+results_file.write("Fine tune 6000 labels eval acc = " + str(fine_tune_acc))
 results_file.write("\n----\n")
 print("Fine tune eval acc = " + str(fine_tune_acc))
 
