@@ -24,8 +24,12 @@ parser.add_argument('--dataset', type=str,
                     help='Dataset string.')
 parser.add_argument('--no-cuda', action='store_true', default=False,
                     help='Disable CUDA training.')
+parser.add_argument('--results-file', type=str,
+                    default='results_c_swm.txt',
+                    help='Path to file containing results')
 
 args_eval = parser.parse_args()
+results_file = open(args.results_file, "a")
 
 
 meta_file = os.path.join(args_eval.save_folder, 'metadata.pkl')
@@ -155,3 +159,10 @@ for k in topk:
     print('Hits @ {}: {}'.format(k, hits_at[k] / float(num_samples)))
 
 print('MRR: {}'.format(rr_sum / float(num_samples)))
+
+results_dict = {}
+results_dict['H1'] = hits_at[1] / float(num_samples)
+results_dict['MRR'] = rr_sum / float(num_samples)
+results_file.write("\n----\n")
+results_file.write(str(results_dict))
+results_file.write("\n----\n")
