@@ -29,7 +29,7 @@ parser.add_argument('--results-file', type=str,
                     help='Path to file containing results')
 
 args_eval = parser.parse_args()
-results_file = open(args.results_file, "a")
+results_file = open(args_eval.results_file, "a")
 
 
 meta_file = os.path.join(args_eval.save_folder, 'metadata.pkl')
