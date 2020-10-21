@@ -59,6 +59,8 @@ parser.add_argument('--save-folder', type=str,
                     help='Path to checkpoints.')
 parser.add_argument('--no-cuda', action='store_true', default=False,
                     help='Disable CUDA training.')
+parser.add_argument('--use-trans-model', action='store_true', default=False,
+                    help='Use GNN in evaluation.')
             
 #Results
 parser.add_argument('--num-workers', type=int, default=4,
@@ -70,6 +72,7 @@ parser.add_argument('--results-file', type=str,
 args = parser.parse_args()
 args.cuda = not args.no_cuda and torch.cuda.is_available()
 results_file = open(args.results_file, "a")
+use_trans_model = args.use_trans_model
 
 #Dataset
 padded_train_set_array, train_targets_array, padded_test_set_array, test_targets_array = load_padded_mnist(args.padded_mnist_path)
@@ -88,9 +91,11 @@ model, train_args = load_model_from_file(args.save_folder, input_shape, device)
 results_file.write(str(train_args.__dict__ ))
 results_file.write("\n----\n")
 
+results_file.write("use_trans_model=" + str(use_trans_model))
+results_file.write("\n----\n")
 #Linear evaluation
-train_repr_array = generate_repr_dataset(model, train_loader, device)
-test_repr_array = generate_repr_dataset(model, test_loader, device)
+train_repr_array = generate_repr_dataset(model, train_loader, device, use_trans_model=use_trans_model)
+test_repr_array = generate_repr_dataset(model, test_loader, device, use_trans_model=use_trans_model)
 eval_score = linear_eval(train_repr_array, train_targets_array, test_repr_array, test_targets_array)
 results_file.write("LinearEvalAcc = " + str(eval_score))
 results_file.write("\n----\n")
@@ -103,14 +108,14 @@ mnist_test_ds = MNISTDataset(padded_test_set_array, test_targets_array)
 mnist_test_data_loader = DataLoader(mnist_test_ds, batch_size=5, shuffle=False)
 
 model, train_args = load_model_from_file(args.save_folder, input_shape, device) #Reload
-model = fine_tune_downstream(model, device, mnist_data_loader, 10, epochs=30, learning_rate=5e-4)
-fine_tune_acc = evaluate_downstream(model, device, mnist_test_data_loader)
+model = fine_tune_downstream(model, device, mnist_data_loader, 10, epochs=30, learning_rate=5e-4, use_trans_model=use_trans_model)
+fine_tune_acc = evaluate_downstream(model, device, mnist_test_data_loader, use_trans_model=use_trans_model)
 results_file.write("FineTuning10pc30epochs = " + str(fine_tune_acc))
 results_file.write("\n----\n")
 print("Fine tune eval 30 acc = " + str(fine_tune_acc))
 
-model = fine_tune_downstream(model, device, mnist_data_loader, 10, epochs=30, learning_rate=5e-4)
-fine_tune_acc = evaluate_downstream(model, device, mnist_test_data_loader)
+model = fine_tune_downstream(model, device, mnist_data_loader, 10, epochs=30, learning_rate=5e-4, use_trans_model=use_trans_model)
+fine_tune_acc = evaluate_downstream(model, device, mnist_test_data_loader, use_trans_model=use_trans_model)
 results_file.write("FineTuning10pc60epochs = " + str(fine_tune_acc))
 results_file.write("\n----\n")
 print("Fine tune eval 60 acc = " + str(fine_tune_acc))
