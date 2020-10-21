@@ -163,5 +163,7 @@ print('MRR: {}'.format(rr_sum / float(num_samples)))
 results_dict = {}
 results_dict['H1'] = hits_at[1] / float(num_samples)
 results_dict['MRR'] = rr_sum / float(num_samples)
+results_file.write("num_steps="+str(args_eval.num_steps))
+results_file.write("\n----\n")
 results_file.write(str(results_dict))
 results_file.write("\n----\n")
