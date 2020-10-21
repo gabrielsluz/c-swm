@@ -4,6 +4,7 @@ Functions for fine tuning the model
 import torch
 from torch.utils.data import Dataset, DataLoader
 from torch import nn
+import numpy as np
 
 class MNISTDataset(Dataset):
     def __init__(self, images, labels, transforms=None):
