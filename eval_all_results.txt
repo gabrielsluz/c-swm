@@ -807,3 +807,443 @@ num_steps=10
 ----
 {'H1': 0.5465, 'MRR': tensor(0.6461, dtype=torch.float64)}
 ----
+{'batch_size': 512, 'epochs': 10, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 2, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 42, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=False
+----
+LinearEvalAcc = 0.3102
+----
+FineTuning10pc30epochs = 0.5192
+----
+FineTuning10pc60epochs = 0.5764
+----
+{'batch_size': 512, 'epochs': 10, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 2, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 42, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=True
+----
+LinearEvalAcc = 0.3009
+----
+FineTuning10pc30epochs = 0.5289
+----
+FineTuning10pc60epochs = 0.7089
+----
+num_steps=1
+----
+{'H1': 0.83225, 'MRR': tensor(0.8890, dtype=torch.float64)}
+----
+num_steps=5
+----
+{'H1': 0.0915, 'MRR': tensor(0.1771, dtype=torch.float64)}
+----
+num_steps=10
+----
+{'H1': 0.01575, 'MRR': tensor(0.0447, dtype=torch.float64)}
+----
+{'batch_size': 512, 'epochs': 10, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 2, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 42, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=False
+----
+LinearEvalAcc = 0.2974
+----
+FineTuning10pc30epochs = 0.2931
+----
+FineTuning10pc60epochs = 0.4665
+----
+{'batch_size': 512, 'epochs': 10, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 2, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 42, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=True
+----
+LinearEvalAcc = 0.2756
+----
+FineTuning10pc30epochs = 0.3309
+----
+FineTuning10pc60epochs = 0.5699
+----
+num_steps=1
+----
+{'H1': 0.83225, 'MRR': tensor(0.8890, dtype=torch.float64)}
+----
+num_steps=5
+----
+{'H1': 0.0915, 'MRR': tensor(0.1771, dtype=torch.float64)}
+----
+num_steps=10
+----
+{'H1': 0.01575, 'MRR': tensor(0.0447, dtype=torch.float64)}
+----
+{'batch_size': 512, 'epochs': 10, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 2, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=False
+----
+LinearEvalAcc = 0.3306
+----
+FineTuning10pc30epochs = 0.3905
+----
+FineTuning10pc60epochs = 0.5452
+----
+{'batch_size': 512, 'epochs': 10, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 2, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=True
+----
+LinearEvalAcc = 0.3218
+----
+FineTuning10pc30epochs = 0.3097
+----
+FineTuning10pc60epochs = 0.3594
+----
+{'batch_size': 512, 'epochs': 10, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 2, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=False
+----
+LinearEvalAcc = 0.3263
+----
+FineTuning10pc30epochs = 0.4877
+----
+FineTuning10pc60epochs = 0.494
+----
+{'batch_size': 512, 'epochs': 10, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 2, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=True
+----
+LinearEvalAcc = 0.339
+----
+FineTuning10pc30epochs = 0.5018
+----
+FineTuning10pc60epochs = 0.6985
+----
+{'batch_size': 512, 'epochs': 20, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 2, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=False
+----
+LinearEvalAcc = 0.343
+----
+FineTuning10pc30epochs = 0.4703
+----
+FineTuning10pc60epochs = 0.748
+----
+{'batch_size': 512, 'epochs': 20, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 2, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=True
+----
+LinearEvalAcc = 0.3432
+----
+FineTuning10pc30epochs = 0.4129
+----
+FineTuning10pc60epochs = 0.6123
+----
+{'batch_size': 512, 'epochs': 20, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 2, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=False
+----
+LinearEvalAcc = 0.2573
+----
+FineTuning10pc30epochs = 0.5079
+----
+FineTuning10pc60epochs = 0.6643
+----
+{'batch_size': 512, 'epochs': 20, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 2, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=True
+----
+LinearEvalAcc = 0.315
+----
+FineTuning10pc30epochs = 0.4921
+----
+FineTuning10pc60epochs = 0.5395
+----
+{'batch_size': 512, 'epochs': 10, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 2, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=False
+----
+LinearEvalAcc = 0.3173
+----
+FineTuning10pc30epochs = 0.4508
+----
+FineTuning10pc60epochs = 0.6493
+----
+{'batch_size': 512, 'epochs': 10, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 2, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=True
+----
+LinearEvalAcc = 0.2828
+----
+FineTuning10pc30epochs = 0.4052
+----
+FineTuning10pc60epochs = 0.7128
+----
+num_steps=1
+----
+{'H1': 0.858, 'MRR': tensor(0.9074, dtype=torch.float64)}
+----
+num_steps=5
+----
+{'H1': 0.1025, 'MRR': tensor(0.1868, dtype=torch.float64)}
+----
+num_steps=10
+----
+{'H1': 0.01875, 'MRR': tensor(0.0535, dtype=torch.float64)}
+----
+{'batch_size': 512, 'epochs': 20, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 2, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=False
+----
+LinearEvalAcc = 0.3386
+----
+FineTuning10pc30epochs = 0.5103
+----
+FineTuning10pc60epochs = 0.3195
+----
+{'batch_size': 512, 'epochs': 20, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 2, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=True
+----
+LinearEvalAcc = 0.3701
+----
+FineTuning10pc30epochs = 0.5372
+----
+FineTuning10pc60epochs = 0.4467
+----
+num_steps=1
+----
+{'H1': 0.88825, 'MRR': tensor(0.9295, dtype=torch.float64)}
+----
+num_steps=5
+----
+{'H1': 0.13225, 'MRR': tensor(0.2204, dtype=torch.float64)}
+----
+num_steps=10
+----
+{'H1': 0.03625, 'MRR': tensor(0.0783, dtype=torch.float64)}
+----
+{'batch_size': 512, 'epochs': 10, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 5, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=False
+----
+LinearEvalAcc = 0.387
+----
+FineTuning10pc30epochs = 0.6328
+----
+FineTuning10pc60epochs = 0.7676
+----
+{'batch_size': 512, 'epochs': 10, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 5, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=True
+----
+LinearEvalAcc = 0.2729
+----
+FineTuning10pc30epochs = 0.633
+----
+FineTuning10pc60epochs = 0.824
+----
+num_steps=1
+----
+{'H1': 0.95075, 'MRR': tensor(0.9674, dtype=torch.float64)}
+----
+num_steps=5
+----
+{'H1': 0.305, 'MRR': tensor(0.4330, dtype=torch.float64)}
+----
+num_steps=10
+----
+{'H1': 0.06825, 'MRR': tensor(0.1404, dtype=torch.float64)}
+----
+{'batch_size': 512, 'epochs': 20, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 5, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=False
+----
+LinearEvalAcc = 0.4605
+----
+FineTuning10pc30epochs = 0.4962
+----
+FineTuning10pc60epochs = 0.7186
+----
+{'batch_size': 512, 'epochs': 20, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 5, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=True
+----
+LinearEvalAcc = 0.4087
+----
+FineTuning10pc30epochs = 0.6331
+----
+FineTuning10pc60epochs = 0.8773
+----
+num_steps=1
+----
+{'H1': 0.96775, 'MRR': tensor(0.9801, dtype=torch.float64)}
+----
+num_steps=5
+----
+{'H1': 0.4335, 'MRR': tensor(0.5544, dtype=torch.float64)}
+----
+num_steps=10
+----
+{'H1': 0.14075, 'MRR': tensor(0.2323, dtype=torch.float64)}
+----
+{'batch_size': 512, 'epochs': 10, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 10, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=False
+----
+LinearEvalAcc = 0.4799
+----
+FineTuning10pc30epochs = 0.7397
+----
+FineTuning10pc60epochs = 0.9003
+----
+{'batch_size': 512, 'epochs': 10, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 10, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=True
+----
+LinearEvalAcc = 0.4623
+----
+FineTuning10pc30epochs = 0.756
+----
+FineTuning10pc60epochs = 0.8881
+----
+num_steps=1
+----
+{'H1': 0.97575, 'MRR': tensor(0.9847, dtype=torch.float64)}
+----
+num_steps=5
+----
+{'H1': 0.626, 'MRR': tensor(0.7240, dtype=torch.float64)}
+----
+num_steps=10
+----
+{'H1': 0.28825, 'MRR': tensor(0.3999, dtype=torch.float64)}
+----
+{'batch_size': 512, 'epochs': 20, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 10, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=False
+----
+LinearEvalAcc = 0.4895
+----
+FineTuning10pc30epochs = 0.7777
+----
+FineTuning10pc60epochs = 0.8964
+----
+{'batch_size': 512, 'epochs': 20, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 10, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=True
+----
+LinearEvalAcc = 0.4836
+----
+FineTuning10pc30epochs = 0.8027
+----
+FineTuning10pc60epochs = 0.9145
+----
+num_steps=1
+----
+{'H1': 0.98425, 'MRR': tensor(0.9897, dtype=torch.float64)}
+----
+num_steps=5
+----
+{'H1': 0.70275, 'MRR': tensor(0.7912, dtype=torch.float64)}
+----
+num_steps=10
+----
+{'H1': 0.37175, 'MRR': tensor(0.4961, dtype=torch.float64)}
+----
+{'batch_size': 512, 'epochs': 10, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=False
+----
+LinearEvalAcc = 0.5404
+----
+FineTuning10pc30epochs = 0.8211
+----
+FineTuning10pc60epochs = 0.8951
+----
+{'batch_size': 512, 'epochs': 10, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=True
+----
+LinearEvalAcc = 0.4794
+----
+FineTuning10pc30epochs = 0.8358
+----
+FineTuning10pc60epochs = 0.9099
+----
+{'batch_size': 512, 'epochs': 20, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=False
+----
+LinearEvalAcc = 0.4801
+----
+FineTuning10pc30epochs = 0.8081
+----
+FineTuning10pc60epochs = 0.9085
+----
+{'batch_size': 512, 'epochs': 20, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=True
+----
+LinearEvalAcc = 0.4964
+----
+FineTuning10pc30epochs = 0.7846
+----
+FineTuning10pc60epochs = 0.9045
+----
+{'batch_size': 512, 'epochs': 10, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=False
+----
+LinearEvalAcc = 0.4478
+----
+FineTuning10pc30epochs = 0.7287
+----
+FineTuning10pc60epochs = 0.9045
+----
+{'batch_size': 512, 'epochs': 10, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=True
+----
+LinearEvalAcc = 0.502
+----
+FineTuning10pc30epochs = 0.8084
+----
+FineTuning10pc60epochs = 0.8902
+----
+num_steps=1
+----
+{'H1': 0.9755, 'MRR': tensor(0.9844, dtype=torch.float64)}
+----
+num_steps=5
+----
+{'H1': 0.629, 'MRR': tensor(0.7239, dtype=torch.float64)}
+----
+num_steps=10
+----
+{'H1': 0.29675, 'MRR': tensor(0.4040, dtype=torch.float64)}
+----
+{'batch_size': 512, 'epochs': 20, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=False
+----
+LinearEvalAcc = 0.5125
+----
+FineTuning10pc30epochs = 0.8427
+----
+FineTuning10pc60epochs = 0.8977
+----
+{'batch_size': 512, 'epochs': 20, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 1, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'cuda': True}
+----
+use_trans_model=True
+----
+LinearEvalAcc = 0.5612
+----
+FineTuning10pc30epochs = 0.8404
+----
+FineTuning10pc60epochs = 0.8604
+----
+num_steps=1
+----
+{'H1': 0.9885, 'MRR': tensor(0.9927, dtype=torch.float64)}
+----
+num_steps=5
+----
+{'H1': 0.80475, 'MRR': tensor(0.8663, dtype=torch.float64)}
+----
+num_steps=10
+----
+{'H1': 0.51025, 'MRR': tensor(0.6165, dtype=torch.float64)}
+----
