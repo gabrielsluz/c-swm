@@ -4,6 +4,7 @@ import numpy as np
 
 import torch
 from torch import nn
+import torch.nn.functional as F
 
 
 class ContrastiveSWM(nn.Module):
