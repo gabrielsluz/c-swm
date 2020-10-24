@@ -128,42 +128,42 @@ class ContrastiveSWM(nn.Module):
     def nt_xent_loss(self, obs, action, next_obs):
         LARGE_NUM = 1e9
         temperature = self.temperature
-
+    
         objs = self.obj_extractor(obs)
         next_objs = self.obj_extractor(next_obs)
-
+    
         next_state = self.obj_encoder(next_objs)
         state = self.obj_encoder(objs)
         pred_trans = self.transition_model(state, action)
         pred_state = state + pred_trans
-
+    
         flat_pred_state = torch.flatten(pred_state, start_dim=1)
         flat_next_state = torch.flatten(next_state, start_dim=1)
-
+    
         batch_size = flat_pred_state.size()[0]
         state_dim = flat_pred_state.size()[1]
         hidden = F.normalize(torch.cat((flat_pred_state, flat_next_state), 1), p=2, dim=1)
         hidden_1, hidden_2 = torch.split(hidden, split_size_or_sections=state_dim, dim=1)
-
+    
         #labels = F.one_hot(torch.arange(0, batch_size), num_classes=batch_size * 2)
         labels = torch.arange(0, batch_size).to(obs.get_device())
-        masks = F.one_hot(torch.arange(0, batch_size), num_classes=batch_size).to(obs.get_device())
-
+        masks = F.one_hot(torch.arange(0, batch_size), num_classes=batch_size).float().to(obs.get_device())
+    
         hidden_1_T = torch.transpose(hidden_1, 0, 1)
         hidden_2_T = torch.transpose(hidden_1, 0, 1)
-
+    
         logits_11 = torch.matmul(hidden_1, hidden_1_T) / temperature
-        logits_11 = logits_11 - masks.float() * LARGE_NUM #Forces similarity between equals to be small
+        logits_11 = logits_11 - masks * LARGE_NUM #Forces similarity between equals to be small
         logits_22 = torch.matmul(hidden_2, hidden_2_T) / temperature
-        logits_22 = logits_22 - masks.float() * LARGE_NUM #Forces similarity between equals to be small
+        logits_22 = logits_22 - masks * LARGE_NUM #Forces similarity between equals to be small
         logits_12 = torch.matmul(hidden_1, hidden_2_T) / temperature
         logits_21 = torch.matmul(hidden_2, hidden_1_T) / temperature
-
+    
         cross_entropy_loss = nn.CrossEntropyLoss()
         loss_1 = cross_entropy_loss(torch.cat((logits_12, logits_11), 1), labels)
         loss_2 = cross_entropy_loss(torch.cat((logits_21, logits_22), 1), labels)
         loss = loss_1 + loss_2
-
+    
         return loss
 
 
