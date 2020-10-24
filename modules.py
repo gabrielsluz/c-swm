@@ -127,7 +127,7 @@ class ContrastiveSWM(nn.Module):
     #From SimCLR
     def nt_xent_loss(self, obs, action, next_obs):
         LARGE_NUM = 1e9
-        temperature = 0.1
+        temperature = self.temperature
 
         objs = self.obj_extractor(obs)
         next_objs = self.obj_extractor(next_obs)
@@ -146,8 +146,8 @@ class ContrastiveSWM(nn.Module):
         hidden_1, hidden_2 = torch.split(hidden, split_size_or_sections=state_dim, dim=1)
 
         #labels = F.one_hot(torch.arange(0, batch_size), num_classes=batch_size * 2)
-        labels = torch.arange(0, batch_size)
-        masks = F.one_hot(torch.arange(0, batch_size), num_classes=batch_size)
+        labels = torch.arange(0, batch_size).to(obs.get_device())
+        masks = F.one_hot(torch.arange(0, batch_size), num_classes=batch_size).to(obs.get_device())
 
         hidden_1_T = torch.transpose(hidden_1, 0, 1)
         hidden_2_T = torch.transpose(hidden_1, 0, 1)
