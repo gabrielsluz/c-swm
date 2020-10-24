@@ -4,7 +4,7 @@
 #Train20 => eval_all => eval_all_use_trans_model => eval 1 => eval 5 => eval 10
 
 for seed in 1 2 3 ; do
-  for num_epochs in 1 2 3 4; do
+  for num_epochs in 7 9 13 18; do
     python3 train.py --seed $seed --dataset /datasets/c_swm_data/mmnist_train.h5 --encoder large --embedding-dim 10 --num-objects 15 --epochs $num_epochs --name mmnist --ignore-action --batch-size 512
     python3 eval_all.py --padded_mnist_path /datasets/c_swm_data/padded_mnist.npz --save-folder checkpoints/mmnist/ --results-file eval_all_results.txt
     python3 eval_all.py --padded_mnist_path /datasets/c_swm_data/padded_mnist.npz --save-folder checkpoints/mmnist/ --results-file eval_all_results.txt --use-trans-model 
