@@ -63,7 +63,7 @@ parser.add_argument('--save-folder', type=str,
 
 parser.add_argument('--use-nt-xent-loss', action='store_true', default=False,
                     help='Uses SimCLR loss')
-parser.add_argument('--temperature', type=float, default=0.5,
+parser.add_argument('--temperature', type=float, default=0.1,
                     help='NT-Xent loss temperature')
 
 args = parser.parse_args()
