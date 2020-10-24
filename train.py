@@ -61,6 +61,11 @@ parser.add_argument('--save-folder', type=str,
                     default='checkpoints',
                     help='Path to checkpoints.')
 
+parser.add_argument('--use-nt-xent-loss', action='store_true', default=False,
+                    help='Uses SimCLR loss')
+parser.add_argument('--temperature', type=float, default=0.5,
+                    help='NT-Xent loss temperature')
+
 args = parser.parse_args()
 args.cuda = not args.no_cuda and torch.cuda.is_available()
 
@@ -114,7 +119,9 @@ model = modules.ContrastiveSWM(
     hinge=args.hinge,
     ignore_action=args.ignore_action,
     copy_action=args.copy_action,
-    encoder=args.encoder).to(device)
+    encoder=args.encoder,
+    use_nt_xent_loss=args.use_nt_xent_loss,
+    temperature=args.temperature).to(device)
 
 model.apply(utils.weights_init)
 
@@ -176,6 +183,8 @@ for epoch in range(1, args.epochs + 1):
                 next_rec, next_obs,
                 reduction='sum') / obs.size(0)
             loss += next_loss
+        elif model.use_nt_xent_loss:
+            loss = model.nt_xent_loss(*data_batch)
         else:
             loss = model.contrastive_loss(*data_batch)
 
