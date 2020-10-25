@@ -162,7 +162,7 @@ def train_and_eval(args, eval_every, use_trans_model, ft_data_loader, ft_eval_da
             model_clone.load_state_dict(copy.deepcopy(model.state_dict())) #Deepcopy does not work on model
             model_clone.to(device)
             ft_acc_list = fine_tune_and_eval_downstream(model_clone, device, ft_data_loader, ft_eval_data_loader,
-             10, acc_every=5, use_trans_model=use_trans_model, epochs=60, learning_rate = 5e-5)
+             10, acc_every=5, use_trans_model=use_trans_model, epochs=60, learning_rate = 5e-4)
             model_clone.to('cpu')
             #Get best accuracy from list and use as the evaluation result for this training epoch
             best_ft_acc = max(ft_acc_list)

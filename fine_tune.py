@@ -119,7 +119,7 @@ def fine_tune_and_eval_downstream(model, device, data_loader, eval_data_loader, 
             tuning_loss += loss.item()
         print('[Epoch %d] loss: %.3f' %
                       (epoch + 1, tuning_loss/len(data_loader)))
-        if epoch % acc_every == 0:
+        if epoch % acc_every == 0 or epoch == epochs-1:
             acc = evaluate_downstream(model, device, eval_data_loader, use_trans_model)
             #epoch_acc_list.append((epoch+1, acc))
             epoch_acc_list.append(acc)
