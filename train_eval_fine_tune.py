@@ -96,6 +96,20 @@ def train_and_eval(args, eval_every, use_trans_model, ft_data_loader, ft_eval_da
         temperature=args.temperature).to(device)
 
     model.apply(utils.weights_init)
+    #Copy model for fine tuning
+    model_copy = modules.ContrastiveSWM(
+        embedding_dim=args.embedding_dim,
+        hidden_dim=args.hidden_dim,
+        action_dim=args.action_dim,
+        input_dims=input_shape,
+        num_objects=args.num_objects,
+        sigma=args.sigma,
+        hinge=args.hinge,
+        ignore_action=args.ignore_action,
+        copy_action=args.copy_action,
+        encoder=args.encoder,
+        use_nt_xent_loss=args.use_nt_xent_loss,
+        temperature=args.temperature).to('cpu')
 
     optimizer = torch.optim.Adam(
         model.parameters(),
@@ -145,9 +159,11 @@ def train_and_eval(args, eval_every, use_trans_model, ft_data_loader, ft_eval_da
             torch.save(model.state_dict(), model_file)
         
         if epoch % eval_every == 0 or epoch == args.epochs:
-            model_copy = copy.deepcopy(model)
+            model_clone.load_state_dict(copy.deepcopy(model.state_dict())) #Deepcopy does not work on model
+            model_clone.to(device)
             ft_acc_list = fine_tune_and_eval_downstream(model_copy, device, ft_data_loader, ft_eval_data_loader,
              10, acc_every=5, use_trans_model=use_trans_model, epochs=60, learning_rate = 5e-5)
+             model_clone.to('cpu')
             #Get best accuracy from list and use as the evaluation result for this training epoch
             best_ft_acc = max(ft_acc_list)
             epoch_acc_list.append((epoch, best_ft_acc))
