@@ -244,7 +244,7 @@ for epoch, acc in epoch_acc_list:
     args.epochs = epoch
     results_file.write(str(args.__dict__ ))
     results_file.write("\n----\n")
-    results_file.write("use_trans_model=" + str(use_trans_model))
+    results_file.write("use_trans_model=" + str(args.use_trans_model))
     results_file.write("\n----\n")
     results_file.write("FineTuning10pc = " + str(acc))
     results_file.write("\n----\n")
