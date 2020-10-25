@@ -234,7 +234,7 @@ parser.add_argument('--padded_mnist_path', type=str, default='data/padded_mnist.
                     help='Path to padded_minist.npz')
 
 #Results 
-parser.add_argument('--eval-every', type=int, default=2,
+parser.add_argument('--eval-every', type=int, default=3,
                     help='Evaluate every k epochs')
 parser.add_argument('--num-workers', type=int, default=4,
                     help='Number of data loaders')
