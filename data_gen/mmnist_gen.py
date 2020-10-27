@@ -64,5 +64,6 @@ for video_index in range(num_videos):
         dataset_eval.append(sample)
         
 save_list_dict_h5py(dataset_train, args.train_fname)
-save_list_dict_h5py(dataset_eval, args.eval_fname)
+if len(dataset_eval) > 0:
+    save_list_dict_h5py(dataset_eval, args.eval_fname)
 
