@@ -16,11 +16,13 @@ import logging
 from torch.utils import data
 from torch.utils.data import DataLoader
 import torch.nn.functional as F
+import torchvision
 
 import modules
 
 from collections import defaultdict
 from fine_tune import *
+import utils
 
 '''
 Returns the padded mnist dataset
@@ -72,8 +74,11 @@ def train_and_eval(args, eval_every, use_trans_model, ft_data_loader, ft_eval_da
 
     device = torch.device('cuda' if args.cuda else 'cpu')
     print("About to get dataset")
-    dataset = utils.StateTransitionsDataset(
-        hdf5_file=args.dataset)
+    transform = None
+    if args.data_aug:
+        transform = utils.get_data_augmentation()
+    dataset = utils.StateTransitionsDataAugDataset(
+        hdf5_file=args.dataset, transforms=transform)
     train_loader = data.DataLoader(
         dataset, batch_size=args.batch_size, shuffle=True, num_workers=args.num_workers)
     print("Dataset loaded")
@@ -232,6 +237,9 @@ parser.add_argument('--use-trans-model', action='store_true', default=False,
 
 parser.add_argument('--padded_mnist_path', type=str, default='data/padded_mnist.npz',
                     help='Path to padded_minist.npz')
+
+parser.add_argument('--data-aug', action='store_true', default=False,
+                    help='Use Data Augmentation')
 
 #Results 
 parser.add_argument('--eval-every', type=int, default=4,

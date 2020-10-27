@@ -7,6 +7,7 @@ import numpy as np
 import torch
 from torch.utils import data
 from torch import nn
+import torchvision
 
 import matplotlib.pyplot as plt
 
@@ -188,3 +189,57 @@ class PathDataset(data.Dataset):
             self.experience_buffer[idx]['next_obs'][self.path_length - 1])
         observations.append(obs)
         return observations, actions
+
+
+def get_data_augmentation(s=1.0, crop_size=50):
+    # s is the strength of color distortion.
+    color_jitter = torchvision.transforms.ColorJitter(0.8*s, 0.8*s, 0.8*s, 0.2*s)
+    rnd_color_jitter = torchvision.transforms.RandomApply([color_jitter], p=0.8)
+    rnd_gray = torchvision.transforms.RandomGrayscale(p=0.2)
+    color_distort = torchvision.transforms.Compose([
+        torchvision.transforms.ToPILImage(),
+        torchvision.transforms.RandomResizedCrop(crop_size),
+        torchvision.transforms.Resize(64),
+        rnd_color_jitter,
+        rnd_gray,
+        torchvision.transforms.ToTensor()])
+    return color_distort
+
+class StateTransitionsDataAugDataset(data.Dataset):
+    """Create dataset of (o_t, a_t, o_{t+1}) transitions from replay buffer."""
+
+    def __init__(self, hdf5_file, transforms=None):
+        """
+        Args:
+            hdf5_file (string): Path to the hdf5 file that contains experience
+                buffer
+            transforms: torchvision transforms
+        """
+        self.transforms = transforms
+        self.experience_buffer = load_list_dict_h5py(hdf5_file)
+
+        # Build table for conversion between linear idx -> episode/step idx
+        self.idx2episode = list()
+        step = 0
+        for ep in range(len(self.experience_buffer)):
+            num_steps = len(self.experience_buffer[ep]['action'])
+            idx_tuple = [(ep, idx) for idx in range(num_steps)]
+            self.idx2episode.extend(idx_tuple)
+            step += num_steps
+
+        self.num_steps = step
+
+    def __len__(self):
+        return self.num_steps
+
+    def __getitem__(self, idx):
+        ep, step = self.idx2episode[idx]
+        #obs = to_float(self.experience_buffer[ep]['obs'][step])
+        obs = self.experience_buffer[ep]['obs'][step]
+        action = self.experience_buffer[ep]['action'][step]
+        #next_obs = to_float(self.experience_buffer[ep]['next_obs'][step])
+        next_obs = self.experience_buffer[ep]['next_obs'][step]
+        if self.transforms:
+            obs = self.transforms(obs[0])
+            next_obs = self.transforms(next_obs[0])
+        return obs, action, next_obs
