@@ -74,15 +74,18 @@ def train_and_eval(args, eval_every, use_trans_model, ft_data_loader, ft_eval_da
 
     device = torch.device('cuda' if args.cuda else 'cpu')
     print("About to get dataset")
+
     transform = None
     if args.data_aug:
         transform = utils.get_data_augmentation()
-    dataset = utils.StateTransitionsDataAugDataset(
-        hdf5_file=args.dataset, transforms=transform)
+        dataset = utils.StateTransitionsDataAugDataset(df5_file=args.dataset, transforms=transform)
+    else:
+        dataset = utils.StateTransitionsDataset(hdf5_file=args.dataset)
+
     train_loader = data.DataLoader(
         dataset, batch_size=args.batch_size, shuffle=True, num_workers=args.num_workers)
     print("Dataset loaded")
-    # Get data sample
+
     obs = train_loader.__iter__().next()[0]
     input_shape = obs[0].size()
 

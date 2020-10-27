@@ -239,7 +239,7 @@ class StateTransitionsDataAugDataset(data.Dataset):
         action = self.experience_buffer[ep]['action'][step]
         #next_obs = to_float(self.experience_buffer[ep]['next_obs'][step])
         next_obs = self.experience_buffer[ep]['next_obs'][step]
-        if self.transforms:
-            obs = self.transforms(obs[0])
-            next_obs = self.transforms(next_obs[0])
+        
+        obs = self.transforms(obs[0])
+        next_obs = self.transforms(next_obs[0])
         return obs, action, next_obs
