@@ -167,7 +167,8 @@ def train_and_eval(args, eval_every, use_trans_model, ft_data_loader, ft_eval_da
                 copy_action=args.copy_action,
                 encoder=args.encoder,
                 use_nt_xent_loss=args.use_nt_xent_loss,
-                temperature=args.temperature).to('cpu')
+                temperature=args.temperature,
+                use_slot_attn=args.slot_attn).to('cpu')
             model_clone.load_state_dict(copy.deepcopy(model.state_dict())) #Deepcopy does not work on model
             model_clone.to(device)
             ft_acc_list = fine_tune_and_eval_downstream(model_clone, device, ft_data_loader, ft_eval_data_loader,

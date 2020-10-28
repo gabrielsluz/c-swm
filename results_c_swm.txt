@@ -146,3 +146,111 @@
 ----
 {'H1': 0.50125, 'MRR': tensor(0.6118, dtype=torch.float64)}
 ----
+num_steps=1
+----
+{'H1': 0.03, 'MRR': tensor(0.0933, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.84, 'MRR': tensor(0.8931, dtype=torch.float64)}
+----
+num_steps=5
+----
+{'H1': 0.05, 'MRR': tensor(0.1254, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.85, 'MRR': tensor(0.9071, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.83, 'MRR': tensor(0.8937, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.84, 'MRR': tensor(0.8997, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.01, 'MRR': tensor(0.0964, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.04, 'MRR': tensor(0.1127, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.3, 'MRR': tensor(0.4577, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.41, 'MRR': tensor(0.4746, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.52, 'MRR': tensor(0.5985, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.82, 'MRR': tensor(0.8558, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.99, 'MRR': tensor(0.9950, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.58, 'MRR': tensor(0.6981, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.76, 'MRR': tensor(0.8589, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.75, 'MRR': tensor(0.8353, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.4, 'MRR': tensor(0.5923, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.16, 'MRR': tensor(0.3653, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.3, 'MRR': tensor(0.4968, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.66, 'MRR': tensor(0.7770, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.76, 'MRR': tensor(0.8472, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.72, 'MRR': tensor(0.8285, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.02, 'MRR': tensor(0.0736, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.27, 'MRR': tensor(0.4500, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 0.87, 'MRR': tensor(0.9221, dtype=torch.float64)}
+----
+num_steps=1
+----
+{'H1': 1.0, 'MRR': tensor(1., dtype=torch.float64)}
+----
+num_steps=5
+----
+{'H1': 0.57, 'MRR': tensor(0.7147, dtype=torch.float64)}
+----
