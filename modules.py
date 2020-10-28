@@ -69,7 +69,7 @@ class ContrastiveSWM(nn.Module):
                 hidden_dim=hidden_dim // 16,
                 num_objects=num_objects)
             # Input dim for slot attention
-            extractor_out_dim = 2500
+            extractor_out_dim = 4096
 
         if use_slot_attn:
             self.obj_encoder = EncoderSlotAttention(
