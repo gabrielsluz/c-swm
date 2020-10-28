@@ -78,7 +78,7 @@ def train_and_eval(args, eval_every, use_trans_model, ft_data_loader, ft_eval_da
     transform = None
     if args.data_aug:
         transform = utils.get_data_augmentation()
-        dataset = utils.StateTransitionsDataAugDataset(df5_file=args.dataset, transforms=transform)
+        dataset = utils.StateTransitionsDataAugDataset(hdf5_file=args.dataset, transforms=transform)
     else:
         dataset = utils.StateTransitionsDataset(hdf5_file=args.dataset)
 
