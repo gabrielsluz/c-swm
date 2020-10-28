@@ -101,7 +101,8 @@ def train_and_eval(args, eval_every, use_trans_model, ft_data_loader, ft_eval_da
         copy_action=args.copy_action,
         encoder=args.encoder,
         use_nt_xent_loss=args.use_nt_xent_loss,
-        temperature=args.temperature).to(device)
+        temperature=args.temperature,
+        use_slot_attn=args.slot_attn).to(device)
 
     model.apply(utils.weights_init)
 
@@ -242,6 +243,8 @@ parser.add_argument('--padded_mnist_path', type=str, default='data/padded_mnist.
                     help='Path to padded_minist.npz')
 
 parser.add_argument('--data-aug', action='store_true', default=False,
+                    help='Use Data Augmentation')
+parser.add_argument('--slot-attn', action='store_true', default=False,
                     help='Use Data Augmentation')
 
 #Results 

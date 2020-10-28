@@ -6,6 +6,8 @@ import torch
 from torch import nn
 import torch.nn.functional as F
 
+from slot_attention.slot_attention import SlotAttention
+
 
 class ContrastiveSWM(nn.Module):
     """Main module for a Contrastively-trained Structured World Model (C-SWM).
@@ -20,7 +22,7 @@ class ContrastiveSWM(nn.Module):
     def __init__(self, embedding_dim, input_dims, hidden_dim, action_dim,
                  num_objects, hinge=1., sigma=0.5, encoder='large',
                  ignore_action=False, copy_action=False, 
-                 use_nt_xent_loss=False, temperature=0.5):
+                 use_nt_xent_loss=False, temperature=0.5, use_slot_attn=False):
         super(ContrastiveSWM, self).__init__()
 
         self.hidden_dim = hidden_dim
@@ -49,6 +51,8 @@ class ContrastiveSWM(nn.Module):
             # CNN image size changes
             width_height = np.array(width_height)
             width_height = width_height // 10
+            # Input dim for slot attention
+            extractor_out_dim = 25
         elif encoder == 'medium':
             self.obj_extractor = EncoderCNNMedium(
                 input_dim=num_channels,
@@ -57,17 +61,28 @@ class ContrastiveSWM(nn.Module):
             # CNN image size changes
             width_height = np.array(width_height)
             width_height = width_height // 5
+            # Input dim for slot attention
+            extractor_out_dim = 100
         elif encoder == 'large':
             self.obj_extractor = EncoderCNNLarge(
                 input_dim=num_channels,
                 hidden_dim=hidden_dim // 16,
                 num_objects=num_objects)
+            # Input dim for slot attention
+            extractor_out_dim = 2500
 
-        self.obj_encoder = EncoderMLP(
-            input_dim=np.prod(width_height),
-            hidden_dim=hidden_dim,
-            output_dim=embedding_dim,
-            num_objects=num_objects)
+        if use_slot_attn:
+            self.obj_encoder = EncoderSlotAttention(
+                num_slots = num_objects,
+                dim = embedding_dim,
+                input_dim = extractor_out_dim,
+                iters = 3)           
+        else:
+            self.obj_encoder = EncoderMLP(
+                input_dim=np.prod(width_height),
+                hidden_dim=hidden_dim,
+                output_dim=embedding_dim,
+                num_objects=num_objects)
 
         self.transition_model = TransitionGNN(
             input_dim=embedding_dim,
