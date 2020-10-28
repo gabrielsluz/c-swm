@@ -1,0 +1,120 @@
+{'batch_size': 512, 'epochs': 2, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 5, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_full_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'use_nt_xent_loss': True, 'temperature': 0.1, 'use_trans_model': True, 'padded_mnist_path': '/datasets/c_swm_data/padded_mnist.npz', 'data_aug': True, 'slot_attn': True, 'eval_every': 2, 'num_workers': 4, 'results_file': 'eval_all_results.txt', 'cuda': True}
+----
+use_trans_model=True
+----
+FineTuning10pc = 0.5422
+----
+{'batch_size': 512, 'epochs': 4, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 5, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_full_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'use_nt_xent_loss': True, 'temperature': 0.1, 'use_trans_model': True, 'padded_mnist_path': '/datasets/c_swm_data/padded_mnist.npz', 'data_aug': True, 'slot_attn': True, 'eval_every': 2, 'num_workers': 4, 'results_file': 'eval_all_results.txt', 'cuda': True}
+----
+use_trans_model=True
+----
+FineTuning10pc = 0.6096
+----
+{'batch_size': 512, 'epochs': 6, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 5, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_full_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'use_nt_xent_loss': True, 'temperature': 0.1, 'use_trans_model': True, 'padded_mnist_path': '/datasets/c_swm_data/padded_mnist.npz', 'data_aug': True, 'slot_attn': True, 'eval_every': 2, 'num_workers': 4, 'results_file': 'eval_all_results.txt', 'cuda': True}
+----
+use_trans_model=True
+----
+FineTuning10pc = 0.632
+----
+{'batch_size': 512, 'epochs': 8, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 5, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_full_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'use_nt_xent_loss': True, 'temperature': 0.1, 'use_trans_model': True, 'padded_mnist_path': '/datasets/c_swm_data/padded_mnist.npz', 'data_aug': True, 'slot_attn': True, 'eval_every': 2, 'num_workers': 4, 'results_file': 'eval_all_results.txt', 'cuda': True}
+----
+use_trans_model=True
+----
+FineTuning10pc = 0.7462
+----
+{'batch_size': 512, 'epochs': 10, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 5, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_full_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'use_nt_xent_loss': True, 'temperature': 0.1, 'use_trans_model': True, 'padded_mnist_path': '/datasets/c_swm_data/padded_mnist.npz', 'data_aug': True, 'slot_attn': True, 'eval_every': 2, 'num_workers': 4, 'results_file': 'eval_all_results.txt', 'cuda': True}
+----
+use_trans_model=True
+----
+FineTuning10pc = 0.7177
+----
+{'batch_size': 512, 'epochs': 12, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 5, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_full_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'use_nt_xent_loss': True, 'temperature': 0.1, 'use_trans_model': True, 'padded_mnist_path': '/datasets/c_swm_data/padded_mnist.npz', 'data_aug': True, 'slot_attn': True, 'eval_every': 2, 'num_workers': 4, 'results_file': 'eval_all_results.txt', 'cuda': True}
+----
+use_trans_model=True
+----
+FineTuning10pc = 0.7718
+----
+{'batch_size': 512, 'epochs': 14, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 5, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_full_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'use_nt_xent_loss': True, 'temperature': 0.1, 'use_trans_model': True, 'padded_mnist_path': '/datasets/c_swm_data/padded_mnist.npz', 'data_aug': True, 'slot_attn': True, 'eval_every': 2, 'num_workers': 4, 'results_file': 'eval_all_results.txt', 'cuda': True}
+----
+use_trans_model=True
+----
+FineTuning10pc = 0.752
+----
+{'batch_size': 512, 'epochs': 16, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 5, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_full_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'use_nt_xent_loss': True, 'temperature': 0.1, 'use_trans_model': True, 'padded_mnist_path': '/datasets/c_swm_data/padded_mnist.npz', 'data_aug': True, 'slot_attn': True, 'eval_every': 2, 'num_workers': 4, 'results_file': 'eval_all_results.txt', 'cuda': True}
+----
+use_trans_model=True
+----
+FineTuning10pc = 0.7855
+----
+{'batch_size': 512, 'epochs': 18, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 5, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_full_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'use_nt_xent_loss': True, 'temperature': 0.1, 'use_trans_model': True, 'padded_mnist_path': '/datasets/c_swm_data/padded_mnist.npz', 'data_aug': True, 'slot_attn': True, 'eval_every': 2, 'num_workers': 4, 'results_file': 'eval_all_results.txt', 'cuda': True}
+----
+use_trans_model=True
+----
+FineTuning10pc = 0.7832
+----
+{'batch_size': 512, 'epochs': 20, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 5, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_full_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'use_nt_xent_loss': True, 'temperature': 0.1, 'use_trans_model': True, 'padded_mnist_path': '/datasets/c_swm_data/padded_mnist.npz', 'data_aug': True, 'slot_attn': True, 'eval_every': 2, 'num_workers': 4, 'results_file': 'eval_all_results.txt', 'cuda': True}
+----
+use_trans_model=True
+----
+FineTuning10pc = 0.8181
+----
+{'batch_size': 512, 'epochs': 2, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 6, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_full_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'use_nt_xent_loss': True, 'temperature': 0.1, 'use_trans_model': True, 'padded_mnist_path': '/datasets/c_swm_data/padded_mnist.npz', 'data_aug': True, 'slot_attn': True, 'eval_every': 2, 'num_workers': 4, 'results_file': 'eval_all_results.txt', 'cuda': True}
+----
+use_trans_model=True
+----
+FineTuning10pc = 0.5775
+----
+{'batch_size': 512, 'epochs': 4, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 6, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_full_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'use_nt_xent_loss': True, 'temperature': 0.1, 'use_trans_model': True, 'padded_mnist_path': '/datasets/c_swm_data/padded_mnist.npz', 'data_aug': True, 'slot_attn': True, 'eval_every': 2, 'num_workers': 4, 'results_file': 'eval_all_results.txt', 'cuda': True}
+----
+use_trans_model=True
+----
+FineTuning10pc = 0.6375
+----
+{'batch_size': 512, 'epochs': 6, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 6, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_full_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'use_nt_xent_loss': True, 'temperature': 0.1, 'use_trans_model': True, 'padded_mnist_path': '/datasets/c_swm_data/padded_mnist.npz', 'data_aug': True, 'slot_attn': True, 'eval_every': 2, 'num_workers': 4, 'results_file': 'eval_all_results.txt', 'cuda': True}
+----
+use_trans_model=True
+----
+FineTuning10pc = 0.6555
+----
+{'batch_size': 512, 'epochs': 8, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 6, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_full_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'use_nt_xent_loss': True, 'temperature': 0.1, 'use_trans_model': True, 'padded_mnist_path': '/datasets/c_swm_data/padded_mnist.npz', 'data_aug': True, 'slot_attn': True, 'eval_every': 2, 'num_workers': 4, 'results_file': 'eval_all_results.txt', 'cuda': True}
+----
+use_trans_model=True
+----
+FineTuning10pc = 0.5547
+----
+{'batch_size': 512, 'epochs': 10, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 6, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_full_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'use_nt_xent_loss': True, 'temperature': 0.1, 'use_trans_model': True, 'padded_mnist_path': '/datasets/c_swm_data/padded_mnist.npz', 'data_aug': True, 'slot_attn': True, 'eval_every': 2, 'num_workers': 4, 'results_file': 'eval_all_results.txt', 'cuda': True}
+----
+use_trans_model=True
+----
+FineTuning10pc = 0.6745
+----
+{'batch_size': 512, 'epochs': 12, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 6, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_full_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'use_nt_xent_loss': True, 'temperature': 0.1, 'use_trans_model': True, 'padded_mnist_path': '/datasets/c_swm_data/padded_mnist.npz', 'data_aug': True, 'slot_attn': True, 'eval_every': 2, 'num_workers': 4, 'results_file': 'eval_all_results.txt', 'cuda': True}
+----
+use_trans_model=True
+----
+FineTuning10pc = 0.6416
+----
+{'batch_size': 512, 'epochs': 14, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 6, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_full_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'use_nt_xent_loss': True, 'temperature': 0.1, 'use_trans_model': True, 'padded_mnist_path': '/datasets/c_swm_data/padded_mnist.npz', 'data_aug': True, 'slot_attn': True, 'eval_every': 2, 'num_workers': 4, 'results_file': 'eval_all_results.txt', 'cuda': True}
+----
+use_trans_model=True
+----
+FineTuning10pc = 0.5433
+----
+{'batch_size': 512, 'epochs': 16, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 6, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_full_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'use_nt_xent_loss': True, 'temperature': 0.1, 'use_trans_model': True, 'padded_mnist_path': '/datasets/c_swm_data/padded_mnist.npz', 'data_aug': True, 'slot_attn': True, 'eval_every': 2, 'num_workers': 4, 'results_file': 'eval_all_results.txt', 'cuda': True}
+----
+use_trans_model=True
+----
+FineTuning10pc = 0.7911
+----
+{'batch_size': 512, 'epochs': 18, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 6, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_full_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'use_nt_xent_loss': True, 'temperature': 0.1, 'use_trans_model': True, 'padded_mnist_path': '/datasets/c_swm_data/padded_mnist.npz', 'data_aug': True, 'slot_attn': True, 'eval_every': 2, 'num_workers': 4, 'results_file': 'eval_all_results.txt', 'cuda': True}
+----
+use_trans_model=True
+----
+FineTuning10pc = 0.752
+----
+{'batch_size': 512, 'epochs': 20, 'learning_rate': 0.0005, 'encoder': 'large', 'sigma': 0.5, 'hinge': 1.0, 'hidden_dim': 512, 'embedding_dim': 10, 'action_dim': 4, 'num_objects': 15, 'ignore_action': True, 'copy_action': False, 'decoder': False, 'no_cuda': False, 'seed': 6, 'log_interval': 20, 'dataset': '/datasets/c_swm_data/mmnist_full_train.h5', 'name': 'mmnist', 'save_folder': 'checkpoints', 'use_nt_xent_loss': True, 'temperature': 0.1, 'use_trans_model': True, 'padded_mnist_path': '/datasets/c_swm_data/padded_mnist.npz', 'data_aug': True, 'slot_attn': True, 'eval_every': 2, 'num_workers': 4, 'results_file': 'eval_all_results.txt', 'cuda': True}
+----
+use_trans_model=True
+----
+FineTuning10pc = 0.7492
+----
