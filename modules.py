@@ -70,7 +70,7 @@ class ContrastiveSWM(nn.Module):
                 num_slots = num_objects,
                 dim = embedding_dim,
                 input_dim = embedding_dim,
-                iters = 3) 
+                iters = 1) 
             self.obj_encoder.mlp_encoder = EncoderMLP(
                 input_dim=np.prod(width_height),
                 hidden_dim=hidden_dim,
