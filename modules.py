@@ -564,3 +564,9 @@ class DecoderCNNLarge(nn.Module):
         h = self.act4(self.ln1(self.deconv2(h)))
         h = self.act5(self.ln1(self.deconv3(h)))
         return self.deconv4(h)
+
+class EncoderSlotAttention(SlotAttention):
+    """SlotAttention Encoder, maps obj-specific feature maps to latent state."""
+    def forward(self, ins):
+        ins = torch.flatten(ins, start_dim=2)
+        return super(EncoderSlotAttention, self).forward(ins)
