@@ -58,17 +58,32 @@ eval_loader = data.DataLoader(
 obs = eval_loader.__iter__().next()[0]
 input_shape = obs[0][0].size()
 
+# model = modules.ContrastiveSWM(
+#     embedding_dim=args.embedding_dim,
+#     hidden_dim=args.hidden_dim,
+#     action_dim=args.action_dim,
+#     input_dims=input_shape,
+#     num_objects=args.num_objects,
+#     sigma=args.sigma,
+#     hinge=args.hinge,
+#     ignore_action=args.ignore_action,
+#     copy_action=args.copy_action,
+#     encoder=args.encoder).to(device)
+
 model = modules.ContrastiveSWM(
-    embedding_dim=args.embedding_dim,
-    hidden_dim=args.hidden_dim,
-    action_dim=args.action_dim,
-    input_dims=input_shape,
-    num_objects=args.num_objects,
-    sigma=args.sigma,
-    hinge=args.hinge,
-    ignore_action=args.ignore_action,
-    copy_action=args.copy_action,
-    encoder=args.encoder).to(device)
+        embedding_dim=args.embedding_dim,
+        hidden_dim=args.hidden_dim,
+        action_dim=args.action_dim,
+        input_dims=input_shape,
+        num_objects=args.num_objects,
+        sigma=args.sigma,
+        hinge=args.hinge,
+        ignore_action=args.ignore_action,
+        copy_action=args.copy_action,
+        encoder=args.encoder,
+        use_nt_xent_loss=args.use_nt_xent_loss,
+        temperature=args.temperature,
+        use_slot_attn=args.slot_attn).to(device)
 
 model.load_state_dict(torch.load(model_file))
 model.eval()
